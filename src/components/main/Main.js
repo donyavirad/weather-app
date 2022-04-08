@@ -7,20 +7,27 @@ class Main extends React.Component{
         api:{}
     }
     componentDidMount(){
-        axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=37.0667&lon=57.4967&lang=fa&appid=3c1faa2ad2a590d8f291f067c5ba2c00")
+        axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=37.0667&lon=57.4967&lang=fa&units=metric&appid=3c1faa2ad2a590d8f291f067c5ba2c00")
             .then((response)=>{
                 this.setState({
                     api: response
                 })
             })
     }
+
     render(){
         console.log(this.state.api)
         return(
-            <div>
-                <Header/>
-                <Hourly/>
-            </div>
+                this.state.api.status === 200 ?
+                    <div>
+                        <Header api={this.state.api}/>
+                        <Hourly/>
+                    </div>
+                    : 
+                    <div>
+                        
+                        <p>notting</p>
+                    </div>
         )
     }
 }
