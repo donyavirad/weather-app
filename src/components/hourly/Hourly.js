@@ -4,6 +4,7 @@ import Container from "../../hoc/Container"
 import sun from "../../assets/images/sun.svg"
 const Hourly = (props)=>{
     return(
+        // test change 
         <div className="hourly">
             <Container>
                 <div className="hourly__container">
