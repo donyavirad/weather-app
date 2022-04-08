@@ -1,0 +1,72 @@
+.header{
+    position: relative;
+    background: url("../../assets/images/wepik-202237-125559.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: .4);
+    }
+    &__container{
+        position: relative;
+        z-index: 1;
+        padding: 2rem 0;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 45rem;
+        &-location,&-temp,&-desc{
+            text-shadow: 1px 0 0 #a5a5a5, 1px 0 0 #a5a5a5;
+            color: #fff;
+        }
+        &-location{
+            font-size: 3rem;
+            animation: text-anime 1s 1 ;
+        }
+        &-date{
+            font-size: 2rem;
+            color: #eaeaea;
+            opacity: 0;
+            animation: text-anime 1s .5s 1 forwards;
+        }
+        &-section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2rem;
+            opacity: 0;
+            animation: text-anime 1s 1s 1 forwards;
+        }
+        &-temp{
+            font-size: 8rem;
+            padding-left: 2rem;
+        }
+        &-image{
+            height: 12rem;
+        }
+        &-desc{
+            font-size: 2rem;
+            opacity: 0;
+            animation: text-anime 1s 1.5s 1 forwards;
+        }
+    }
+}
+
+
+@keyframes text-anime {
+    0%{
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
