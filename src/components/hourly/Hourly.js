@@ -12,7 +12,6 @@ const Hourly = (props)=>{
                     </div>
                     <div className="hourly__content">
                         <div className="hourly__content-scroll">
-                            <a>test</a>
                             <div className="hourly__content-grid">
                                 <div className="hourly__content-item" id="start">
                                     <p className="hourly__content-time">09:43</p>
