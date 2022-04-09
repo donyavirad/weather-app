@@ -2,7 +2,8 @@ import React,{useState,useEffect} from "react"
 import "./Header.scss"
 import Container from "../../hoc/Container"
 import Navbar from "../navbar/Navbar"
-import sun from "../../assets/images/sun.svg"
+import ImageStatus from "../imageStatus/imageStatus"
+import Background from "./bachground/background"
 const Header =(props)=>{
     const [header,setHeader] = useState({
         api:{},
@@ -25,26 +26,31 @@ const Header =(props)=>{
     const roundNumber =(num)=>{
         return Math.round(num)
     }
-    return(
-        <div className="header">
-            <Container>
-                <div className="header__container">
-                    <Navbar/>
-                    {header.api.status === 200 ?
-                    <div className="header__info">
-                        <p className="header__info-location">اسفراین ،ایران</p>
-                        <p className="header__info-date">{timeHandler(header.api.data.current.dt)}</p>
-                        <div className="header__info-section">
-                            <p className="header__info-temp">{roundNumber(header.api.data.current.temp)}°C</p>
-                            <img className="header__info-image" src={sun}/>
+    if(header.api.status === 200){
+        return(
+            <Background weather={header.api.data.current.weather[0]}>
+                <Container>
+                    <div className="header__container">
+                        <Navbar/>
+                        <div className="header__info">
+                            <p className="header__info-location">اسفراین ،ایران</p>
+                            <p className="header__info-date">{timeHandler(header.api.data.current.dt)}</p>
+                            <div className="header__info-section">
+                                <p className="header__info-temp">{roundNumber(header.api.data.current.temp)}°C</p>
+                                <ImageStatus weather={header.api.data.current.weather[0]} className="header__info-image"/>
+                            </div>
+                            <p className="header__info-desc">{header.api.data.current.weather[0].description}</p>
                         </div>
-                        <p className="header__info-desc">{header.api.data.current.weather[0].description}</p>
+                        
                     </div>
-                    : null}
-                </div>
-            </Container>
-        </div>
-    )
+                </Container>
+            </Background>
+        )
+        }else{
+            return(
+                <div></div>
+            )
+    }
 }
 
 export default Header

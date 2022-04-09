@@ -21,7 +21,7 @@ class Main extends React.Component{
                 this.state.api.status === 200 ?
                     <div>
                         <Header api={this.state.api}/>
-                        <Hourly/>
+                        <Hourly api={this.state.api}/>
                     </div>
                     : 
                     <div>

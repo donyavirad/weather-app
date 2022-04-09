@@ -1,9 +1,5 @@
 .header{
     position: relative;
-    background: url("../../assets/images/wepik-202237-125559.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     &::before{
         content: '';
         position: absolute;
