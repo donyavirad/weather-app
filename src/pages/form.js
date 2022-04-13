@@ -20,7 +20,7 @@ class Form extends React.Component {
         //console.log(this.state)
         this.setState({error : false , loading : true})
 
-        axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${this.state.userInput}&limit=10&appid=3c1faa2ad2a590d8f291f067c5ba2c00`)
+        axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${this.state.userInput}&limit=10&appid=3c1faa2ad2a590d8f291f067c5ba2c00`)
         .then((response)=>{
             this.setState({
                 data: response
