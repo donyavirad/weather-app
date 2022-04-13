@@ -12,12 +12,12 @@ class App extends React.Component {
             <BrowserRouter basename='https://weather-app-donyavi.netlify.app'>
                 <Router>
                         <Routes>
-                            <Route exact path='./' element={
+                            <Route exact path='/' element={
                                 !(localInfo === null) ? <Navigate to={"/home"}/>
                                 : <Navigate to="/start"/>
                             }/>
-                            <Route exact path='./home' element={<Home/>} />
-                            <Route exact path='./start' element={<Form/>} />
+                            <Route exact path='/home' element={<Home/>} />
+                            <Route exact path='/start' element={<Form/>} />
                         </Routes>
                 </Router>
             </BrowserRouter>
