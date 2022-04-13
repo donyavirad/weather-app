@@ -9,7 +9,6 @@ class App extends React.Component {
        const localInfo = localStorage.getItem("weatherInfo")
         return(
             <main>
-            <BrowserRouter basename='https://weather-app-donyavi.netlify.app'>
                 <Router>
                         <Routes>
                             <Route exact path='/' element={
@@ -20,7 +19,6 @@ class App extends React.Component {
                             <Route exact path='/start' element={<Form/>} />
                         </Routes>
                 </Router>
-            </BrowserRouter>
             </main>
         )
     }
