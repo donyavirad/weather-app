@@ -11,7 +11,6 @@ const Hourly = (props)=>{
             api: props.api
         })
     },[])
-
     const timeHandler= (dt)=>{
         const time = new Date(dt *1000)
         let hour = time.getHours()
@@ -29,7 +28,7 @@ const Hourly = (props)=>{
     }
     if(hourly.api.status === 200){
         const data = hourly.api.data.hourly
-        const updatedData = data.splice(24,24)
+        data.splice(23,24)
         return(
             <div className="hourly">
                 <Container>
@@ -40,13 +39,13 @@ const Hourly = (props)=>{
                         <div className="hourly__content">
                             <div className="hourly__content-scroll">
                                 <div className="hourly__content-grid">
-                                    {updatedData.map((item,id)=>{
+                                    {data.map((item,id)=>{
                                         return( 
                                         <div className="hourly__content-item" key={id} id={`item-${id}`}>
                                             <p className="hourly__content-time">{timeHandler(item.dt)}</p>
                                             <ImageStatus weather={item.weather[0]} class="hourly__content-image"/>
                                             <p className="hourly__content-temp">{roundNumber(item.temp)}°</p>
-                                            <p className="hourly__content-rain">{roundNumber(item.pop)}%</p>
+                                            <p className="hourly__content-rain">{roundNumber(item.pop *100 )}%</p>
                                         </div>
                                     )
                                     })}

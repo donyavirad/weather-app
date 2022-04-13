@@ -1,12 +1,24 @@
 import React from 'react'
-import Main from './components/main/Main'
+import { BrowserRouter as Router,Routes,Route,Navigate} from 'react-router-dom'
+import Home from './pages/home'
+import Form from './pages/form'
 import "./base.scss"
-import "./addCity"
 class App extends React.Component {
+    
     render(){
+       const localInfo = localStorage.getItem("weatherInfo")
         return(
             <main>
-                <Main/>
+                <Router>
+                        <Routes>
+                            <Route exact path='/' element={
+                                !(localInfo === null) ? <Navigate to={"/home"}/>
+                                : <Navigate to="/start"/>
+                            }/>
+                            <Route exact path='/home' element={<Home/>} />
+                            <Route exact path='/start' element={<Form/>} />
+                        </Routes>
+                </Router>
             </main>
         )
     }

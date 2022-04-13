@@ -7,10 +7,12 @@ import Background from "./bachground/background"
 const Header =(props)=>{
     const [header,setHeader] = useState({
         api:{},
+        loc:{}
     })
     useEffect(()=>{
         setHeader({
-            api: props.api
+            api: props.api,
+            loc: props.loc
         })
     },[])
 
@@ -33,7 +35,7 @@ const Header =(props)=>{
                     <div className="header__container">
                         <Navbar/>
                         <div className="header__info">
-                            <p className="header__info-location">اسفراین ،ایران</p>
+                            <p className="header__info-location">{header.loc.local_names.fa}</p>
                             <p className="header__info-date">{timeHandler(header.api.data.current.dt)}</p>
                             <div className="header__info-section">
                                 <p className="header__info-temp">{roundNumber(header.api.data.current.temp)}°C</p>
