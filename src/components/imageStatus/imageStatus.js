@@ -28,7 +28,7 @@ const ImageStatus =(props)=>{
             : icon === "13d" || icon === "13n" ? snowfall
             : icon === "50d" || icon === "50n" ? mist
             : null
-        } className={props.class}/>
+        } className={props.class} alt=""/>
     )
 }
 

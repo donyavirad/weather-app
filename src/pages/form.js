@@ -61,7 +61,7 @@ class Form extends React.Component {
                 <div className='form-result-show'>
                     {data.map((item,id)=>{
                        return(
-                               <a key={id} onClick={this.addCity} id={id} className="form-result-item">
+                               <a key={id} href="" onClick={this.addCity} id={id} className="form-result-item">
                                         {item.name} {item.country} {item.state}
                                 </a>
                        )

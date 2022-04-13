@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import axios from "axios"
 import Header from "../header/Header"
 import Hourly from "../hourly/Hourly"
@@ -11,10 +11,9 @@ class Main extends React.Component{
     componentDidMount(){
         const local = localStorage.getItem("weatherInfo")
         const location = JSON.parse(local)
-        const city = this.setState({
+        this.setState({
             loc:location
         })
-        console.log()
        
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lon}&lang=fa&units=metric&appid=3c1faa2ad2a590d8f291f067c5ba2c00`)
             .then((response)=>{
@@ -23,8 +22,11 @@ class Main extends React.Component{
                 })
             })
     }
+    data = ()=>{
+        return this.state.api
+    }
     render(){
-        console.log(this.state.api)
+        //console.log(this.state.api)
         return(
                 this.state.api.status === 200 ?
                     <div>
