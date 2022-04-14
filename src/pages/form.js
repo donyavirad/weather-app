@@ -76,13 +76,13 @@ class Form extends React.Component {
                 <Container>
                     <div className='form-container'>
                 <div className='form-box'>
-                    <h1 className='form-title'>شهرتان را جست و جو کنید.</h1>
+                    <h1 className='form-title'>آب و هوا</h1>
                     <form className='form-inputs' onSubmit={this.serachCity}>
                         <input 
                             className='form-inputs-string'
                             value={this.state.userInput}
                             onChange={this.setInput}
-                            placeholder='نام شهر را به صورت فارسی یا انگلیسی تایپ کنید.'
+                            placeholder='نام شهر را وارد کنید.'
                             required
                         />
                         

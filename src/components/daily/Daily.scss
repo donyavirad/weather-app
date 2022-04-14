@@ -27,5 +27,35 @@
         border-radius: 1rem;
         background-color: rgba(0, 0, 0, 0.15);
         color: #fff;
+        &-time{
+            width: 10rem;
+        }
+        &-rain{
+            display: flex;
+            width: 6rem;
+            & img{
+                height: 2rem;
+                margin-left: 1rem;
+            }
+        }
+        &-image{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & img{
+                width: 3rem;
+                height: 3rem;
+            }
+            
+        }
+        &-min-mix{
+            display: flex;
+            justify-content: center;
+            width: 10rem;
+            & img{
+                height: 2rem;
+                margin-left: 1rem;
+            }
+        }
     }
 }
