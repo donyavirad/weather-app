@@ -26,7 +26,7 @@ class Main extends React.Component{
         return this.state.api
     }
     render(){
-        //console.log(this.state.api)
+        console.log(this.state.api)
         return(
                 this.state.api.status === 200 ?
                     <div>
@@ -35,7 +35,7 @@ class Main extends React.Component{
                         </div>
                         <div className="main-content">
                             <Hourly api={this.state.api}/>
-                            <Daily/>
+                            <Daily api={this.state.api}/>
                         </div>
                     </div>
                     : 

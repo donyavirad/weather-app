@@ -1,0 +1,31 @@
+.daily{
+    background: linear-gradient(to top left,#14bcf8,#1068f3);
+    padding: 2rem 0;
+    &-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 50rem;
+    }
+    &-title{
+        color: #fff;
+        margin-bottom: 3rem;
+    }
+    &-content{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: .5rem;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, .1);
+    }
+    &-item{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: rgba(0, 0, 0, 0.15);
+        color: #fff;
+    }
+}

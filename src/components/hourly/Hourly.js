@@ -34,7 +34,7 @@ const Hourly = (props)=>{
                 <Container>
                     <div className="hourly__container">
                         <div className="hourly__title">
-                            <p>پیش بینی ۲۴ ساعت آینده</p>
+                            <h2>پیش بینی ۲۴ ساعت آینده</h2>
                         </div>
                         <div className="hourly__content">
                             <div className="hourly__content-scroll">
