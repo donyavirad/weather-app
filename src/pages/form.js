@@ -99,7 +99,7 @@ class Form extends React.Component {
                     </div>
                 </div>
 
-                {this.state.setDataIsOk ? <Navigate to={"/#/home"}/>
+                {this.state.setDataIsOk ? <Navigate to={"/home"}/>
                 : null}
                 </div>
                 </Container>
