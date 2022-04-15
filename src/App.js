@@ -12,11 +12,11 @@ class App extends React.Component {
                 <Router>
                         <Routes>
                             <Route path='/' element={
-                                !(localInfo === null) ? <Navigate to={"/home"}/>
-                                : <Navigate to="/start"/>
+                                !(localInfo === null) ? <Navigate to={"#/home"}/>
+                                : <Navigate to="#/start"/>
                             }/>
-                            <Route path='/home' element={<Home/>} />
-                            <Route path='/start' element={<Form/>} />
+                            <Route path='#/home' element={<Home/>} />
+                            <Route path='#/start' element={<Form/>} />
                         </Routes>
                 </Router>
             </main>
