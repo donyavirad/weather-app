@@ -31,16 +31,16 @@
             width: 10rem;
         }
         &-rain{
-            display: flex;
             width: 6rem;
             & img{
                 height: 2rem;
                 margin-left: 1rem;
             }
+            & span{
+                height: 2rem;
+            }
         }
         &-image{
-            display: flex;
-            align-items: center;
             justify-content: center;
             & img{
                 width: 3rem;
@@ -49,13 +49,17 @@
             
         }
         &-min-mix{
-            display: flex;
-            justify-content: center;
+            justify-content: end;
             width: 10rem;
             & img{
+                width: 2rem;
                 height: 2rem;
                 margin-left: 1rem;
             }
+            & span{
+                height: 2rem;
+            }
+
         }
     }
 }

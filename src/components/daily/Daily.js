@@ -32,21 +32,21 @@ const Daily = (props)=>{
                 {updatedData.map((item,id)=>{
                     return(
                         <div className="daily-item" key={id}>
-                            <div className="daily-item-time">
-                                <p>{ id === 0 ? "امروز" :
+                            <div className="daily-item-time align-items-center">
+                                <span>{ id === 0 ? "امروز" :
                                 timeHandler(item.dt)
-                                }</p>
+                                }</span>
                             </div>
-                            <div className="daily-item-rain">
+                            <div className="daily-item-rain align-items-center">
                                 <img src={water} alt="water"/>
-                                <p>{roundNumber(item.pop * 100) + "%"}</p>
+                                <span className="align-item-center">{roundNumber(item.pop * 100) + "%"}</span>
                             </div>
-                            <div className="daily-item-image">
+                            <div className="daily-item-image align-items-center">
                                 <ImageStatus weather={item.weather[0]}/>
                             </div>
-                            <div className="daily-item-min-mix">
+                            <div className="daily-item-min-mix align-items-center">
                                 <img src={upDown}/>
-                                <p>{roundNumber(item.temp.min)}°/{roundNumber(item.temp.max)}°</p>
+                                <span>{roundNumber(item.temp.min)}°/{roundNumber(item.temp.max)}°</span>
                             </div>
                         </div>
                     )
