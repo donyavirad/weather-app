@@ -41,11 +41,12 @@
             animation: text-anime 1s 1s 1 forwards;
         }
         &-temp{
-            font-size: 8rem;
+            font-size: 6rem;
             padding-left: 2rem;
         }
         &-image{
-            height: 12rem;
+            width: 15rem;
+            height: 15rem;
         }
         &-desc{
             font-size: 2rem;
@@ -66,3 +67,4 @@
         opacity: 1;
     }
 }
+

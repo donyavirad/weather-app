@@ -39,7 +39,7 @@ const Header =(props)=>{
                             <p className="header__info-date">{timeHandler(header.api.data.current.dt)}</p>
                             <div className="header__info-section">
                                 <p className="header__info-temp">{roundNumber(header.api.data.current.temp)}°C</p>
-                                <ImageStatus weather={header.api.data.current.weather[0]} className="header__info-image"/>
+                                <ImageStatus weather={header.api.data.current.weather[0]} class="header__info-image"/>
                             </div>
                             <p className="header__info-desc">{header.api.data.current.weather[0].description}</p>
                         </div>

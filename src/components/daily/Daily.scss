@@ -63,3 +63,27 @@
         }
     }
 }
+@media only screen and (max-width: 768px) {
+    .daily{
+        &-content{
+            padding: 1rem;
+        }
+        
+        &-item{
+            padding: .5rem;
+            &-time,&-rain,&-min-mix{
+                font-size: 1.2rem;
+            }
+            &-rain{
+                & span{
+                    height: 1.5rem;
+                }
+            }
+            &-min-mix{
+                & span{
+                    height: 1.5rem;
+                }
+            }
+        }
+    }
+}

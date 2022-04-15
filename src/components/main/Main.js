@@ -1,8 +1,10 @@
 import React from "react"
 import axios from "axios"
+import "./Main.scss"
 import Header from "../header/Header"
 import Hourly from "../hourly/Hourly"
 import Daily from "../daily/Daily"
+
 class Main extends React.Component{
     state={
         api:{},
@@ -30,13 +32,9 @@ class Main extends React.Component{
         return(
                 this.state.api.status === 200 ?
                     <div>
-                        <div className="main-header">
                             <Header api={this.state.api} loc={this.state.loc}/>
-                        </div>
-                        <div className="main-content">
                             <Hourly api={this.state.api}/>
                             <Daily api={this.state.api}/>
-                        </div>
                     </div>
                     : 
                     <div style={{

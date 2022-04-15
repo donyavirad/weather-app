@@ -1,13 +1,13 @@
 import React from "react"
 import "./Navbar.scss"
 import { Link } from "react-router-dom"
-import menuIcon from "../../assets/images/menu.svg"
+import edit from "../../assets/images/edit.svg"
 const Navbar = ()=>{
     return(
         <Link to="/start">
             <div className="navbar">
-                <img className="navbar__image" src={menuIcon} alt=""/>
-                <p className="navbar__text">گزینه ها</p>
+                <img className="navbar__image" src={edit} alt=""/>
+                <p className="navbar__text">تغییر مکان</p>
             </div>
         </Link>
     )
