@@ -99,7 +99,11 @@ class Form extends React.Component {
                     </div>
                 </div>
 
-                {this.state.setDataIsOk ? <Navigate to={"/home"}/>
+                {this.state.setDataIsOk ? <Navigate to={{
+                    pathname: "/home",
+                    hash: "#res",
+                    search : "?submit=true"
+                }}/>
                 : null}
                 </div>
                 </Container>

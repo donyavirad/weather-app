@@ -9,7 +9,6 @@ class App extends React.Component {
        const localInfo = localStorage.getItem("weatherInfo")
         return(
             <main>
-                <BrowserRouter>
                     <Router>
                             <Routes>
                                 <Route path='/' element={
@@ -20,7 +19,6 @@ class App extends React.Component {
                                 <Route path='/start' element={<Form/>} />
                             </Routes>
                     </Router>
-                </BrowserRouter>
             </main>
         )
     }
