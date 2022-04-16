@@ -11,6 +11,7 @@ class Main extends React.Component{
         loc:""
     }
     componentDidMount(){
+        console.log(this.props)
         const local = localStorage.getItem("weatherInfo")
         const location = JSON.parse(local)
         this.setState({

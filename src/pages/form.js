@@ -12,6 +12,8 @@ class Form extends React.Component {
         loading: false,
         setDataIsOk : false,
     }
+
+
     setInput=(e)=>{
         this.setState({userInput: e.target.value})
     }
@@ -31,7 +33,6 @@ class Form extends React.Component {
         })
     }
     addCity =(e)=>{
-        console.log("addCity")
         const dataCity = this.state.data.data[e.target.id]
         const string = JSON.stringify(dataCity)
         localStorage.setItem("weatherInfo",string)
@@ -65,7 +66,6 @@ class Form extends React.Component {
                             <Link to="/home" key={id} id={id} onClick={this.addCity} className='form-result-item'>
                                 {item.name} {item.country} {item.state}
                             </Link>
-                               
                        )
                    })}
                 </div>
