@@ -9,16 +9,18 @@ class App extends React.Component {
        const localInfo = localStorage.getItem("weatherInfo")
         return(
             <main>
-                <Router>
-                        <Routes>
-                            <Route path='/' element={
-                                !(localInfo === null) ? <Navigate to="/home"/>
-                                : <Navigate to="/start"/>
-                            }/>
-                            <Route path='/home' element={<Home/>} />
-                            <Route path='/start' element={<Form/>} />
-                        </Routes>
-                </Router>
+                <BrowserRouter>
+                    <Router>
+                            <Routes>
+                                <Route path='/' element={
+                                    !(localInfo === null) ? <Navigate to="/home"/>
+                                    : <Navigate to="/start"/>
+                                }/>
+                                <Route path='/home' element={<Home/>} />
+                                <Route path='/start' element={<Form/>} />
+                            </Routes>
+                    </Router>
+                </BrowserRouter>
             </main>
         )
     }
