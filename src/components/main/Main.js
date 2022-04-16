@@ -24,11 +24,9 @@ class Main extends React.Component{
                 })
             })
     }
-    data = ()=>{
-        return this.state.api
-    }
+    
     render(){
-        console.log(this.state.api)
+        console.log(this.props)
         return(
                 this.state.api.status === 200 ?
                     <div>

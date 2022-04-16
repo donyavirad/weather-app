@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate} from 'react-router-dom'
+import { Link, Navigate} from 'react-router-dom'
 import axios from 'axios'
 import "./form.scss"
 import Container from '../hoc/Container'
@@ -61,9 +61,12 @@ class Form extends React.Component {
                 <div className='form-result-show'>
                     {data.map((item,id)=>{
                        return(
-                               <a key={id} href="" onClick={this.addCity} id={id} className="form-result-item">
+                            <Link to="/home" className='form-result-item'>
+                                <a key={id} href="" onClick={this.addCity} id={id} >
                                         {item.name} {item.country} {item.state}
                                 </a>
+                            </Link>
+                               
                        )
                    })}
                 </div>
@@ -75,37 +78,30 @@ class Form extends React.Component {
             <div className='form'>
                 <Container>
                     <div className='form-container'>
-                <div className='form-box'>
-                    <h1 className='form-title'>آب و هوا</h1>
-                    <form className='form-inputs' onSubmit={this.serachCity}>
-                        <input 
-                            className='form-inputs-string'
-                            value={this.state.userInput}
-                            onChange={this.setInput}
-                            placeholder='نام شهر را وارد کنید.'
-                            required
-                        />
-                        
-                        <input className='form-inputs-submit' type="submit" value="جستوجو" />
-                    </form>
-                    <div className='form-result'>
-                        {result}
-                        {this.state.error ? 
-                            <div className='form-result-show'>
-                                <p  style={{color: "white"}}>اتصال اینترنت را بررسی کنید.</p>
+                        <div className='form-box'>
+                            <h1 className='form-title'>آب و هوا</h1>
+                            <form className='form-inputs' onSubmit={this.serachCity}>
+                                <input 
+                                    className='form-inputs-string'
+                                    value={this.state.userInput}
+                                    onChange={this.setInput}
+                                    placeholder='نام شهر را وارد کنید.'
+                                    required
+                                />
+                                
+                                <input className='form-inputs-submit' type="submit" value="جستوجو" />
+                            </form>
+                            <div className='form-result'>
+                                {result}
+                                {this.state.error ? 
+                                    <div className='form-result-show'>
+                                        <p  style={{color: "white"}}>اتصال اینترنت را بررسی کنید.</p>
+                                    </div>
+                                :null}
+
                             </div>
-                         :null}
-
+                        </div>
                     </div>
-                </div>
-
-                {this.state.setDataIsOk ? <Navigate to={{
-                    pathname: "/home",
-                    hash: "#res",
-                    search : "?submit=true"
-                }}/>
-                : null}
-                </div>
                 </Container>
             </div>
         )

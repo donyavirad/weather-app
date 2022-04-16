@@ -26,7 +26,6 @@ const Daily = (props)=>{
     const showData = ()=>{
         const updatedData = data.api.data.daily
         updatedData.splice(6,1)
-        console.log(updatedData)
         return(
             <div className="daily-content">
                 {updatedData.map((item,id)=>{
