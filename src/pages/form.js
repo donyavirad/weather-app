@@ -31,13 +31,14 @@ class Form extends React.Component {
         })
     }
     addCity =(e)=>{
+        console.log("addCity")
         const dataCity = this.state.data.data[e.target.id]
-        console.log(e.target)
         const string = JSON.stringify(dataCity)
         localStorage.setItem("weatherInfo",string)
         this.setState({setDataIsOk:true})
     }
     render(){
+        
         let result = null
         if(this.state.loading){
             result =  
@@ -61,10 +62,8 @@ class Form extends React.Component {
                 <div className='form-result-show'>
                     {data.map((item,id)=>{
                        return(
-                            <Link to="/home" className='form-result-item'>
-                                <a key={id} href="" onClick={this.addCity} id={id} >
-                                        {item.name} {item.country} {item.state}
-                                </a>
+                            <Link to="/home" key={id} id={id} onClick={this.addCity} className='form-result-item'>
+                                {item.name} {item.country} {item.state}
                             </Link>
                                
                        )
