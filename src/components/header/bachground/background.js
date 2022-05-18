@@ -7,6 +7,7 @@ import partlymoon from "../../../assets/images/png/partlymoon.png"
 import snow from "../../../assets/images/png/snow.png"
 import rain from "../../../assets/images/png/rain.png"
 import clouds from "../../../assets/images/png/clouds.png"
+import mist from "../../../assets/images/png/mist.png"
 const Background =(props)=>{
     const icon = props.weather.icon
     return(
@@ -21,7 +22,7 @@ const Background =(props)=>{
             : icon === "09d" || icon === "09n" ? rain
             : icon === "11d" || icon === "11n" ? lighting
             : icon === "13d" || icon === "13n" ? snow
-            // : icon === "50d" || icon === "50n" ? mist
+            : icon === "50d" || icon === "50n" ? mist
             : null
             })`,
             backgroundPosition: "center",

@@ -1,12 +1,5 @@
 .daily{
-    background: linear-gradient(to top left,#14bcf8,#1068f3);
-    padding: 2rem 0;
-    &-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 50rem;
-    }
+    padding-bottom: 2rem;
     &-title{
         color: #fff;
         margin-bottom: 3rem;
@@ -27,6 +20,9 @@
         border-radius: 1rem;
         background-color: rgba(0, 0, 0, 0.15);
         color: #fff;
+        &:not(:last-child){
+            margin-bottom: 1.5rem;
+        }
         &-time{
             width: 10rem;
         }
@@ -68,9 +64,11 @@
         &-content{
             padding: 1rem;
         }
-        
         &-item{
             padding: .5rem;
+            &:not(:last-child){
+                margin-bottom: 1rem;
+            }
             &-time,&-rain,&-min-mix{
                 font-size: 1.2rem;
             }

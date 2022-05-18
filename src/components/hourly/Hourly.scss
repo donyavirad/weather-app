@@ -1,46 +1,35 @@
-$color:#14bcf8;
-$color2: #1068f3;
 .hourly{
     display: flex;
     align-items: center;
-    padding: 2rem 0;
-    background: linear-gradient(to bottom left,$color,$color2);
-    &__container{
+    margin: 2rem 0;
+    &-scroll{
+        position: relative;
+        overflow: scroll;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        padding: 2rem;
+        border-radius: .5rem;
+        background-color: rgba(255, 255, 255, .1);
+        text-align: center;
+    }
+    &-grid{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: fit-content;
+    }
+    &-item{
+        width: 12rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-    }
-    &__title{
+        align-items: center;
+        justify-content: space-around;
+        padding: 2rem 4rem;
+        border-radius: 1rem;
         color: white;
-        margin-bottom: 3rem;
-    }
-    &__content{
-        &-scroll{
-            position: relative;
-            overflow: scroll;
-            overflow-y: hidden;
-            scroll-behavior: smooth;
-            padding: 2rem;
-            border-radius: .5rem;
-            background-color: rgba(255, 255, 255, .1);
-            text-align: center;
-        }
-        &-grid{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 300rem;
-        }
-        &-item{
-            width: 12rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            padding: 2rem;
-            border-radius: 1rem;
-            color: white;
-            background-color: rgba($color: #000000, $alpha: .15);
+        background-color: rgba($color: #000000, $alpha: .15);
+        &:not(:last-child){
+            margin-left: 1.5rem;
         }
         &-time,&-temp,&-rain{
             font-size: 2rem;
@@ -53,12 +42,10 @@ $color2: #1068f3;
         &-time{
             margin-bottom: 1rem;
         }
-
     }
 }
 @media only screen and (max-width: 768px) {
     .hourly{
-        &__content{
             &-scroll{
                 padding: 1rem;
             }
@@ -68,18 +55,20 @@ $color2: #1068f3;
             &-item{
                 width: 8rem;
                 padding: 1rem;
-            }
-            &-time,&-temp,&-rain{
-                font-size: 1.2rem;
-            }
-            &-image{
-                height: 2rem;
-                width: 2rem;
-                margin-bottom: .2rem;
-            }
-            &-time{
-                margin-bottom: .3rem;
+                &:not(:last-child){
+                    margin-left: 1rem;
+                }
+                &-time,&-temp,&-rain{
+                    font-size: 1.2rem;
+                }
+                &-image{
+                    height: 2rem;
+                    width: 2rem;
+                    margin-bottom: .2rem;
+                }
+                &-time{
+                    margin-bottom: .3rem;
+                }
             }
         }
-    }
 }

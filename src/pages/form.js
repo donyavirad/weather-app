@@ -21,7 +21,6 @@ class Form extends React.Component {
         e.preventDefault()
         //console.log(this.state)
         this.setState({error : false , loading : true})
-
         axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${this.state.userInput}&limit=10&appid=3c1faa2ad2a590d8f291f067c5ba2c00`)
         .then((response)=>{
             this.setState({
@@ -31,6 +30,7 @@ class Form extends React.Component {
         }).catch((error)=>{
             this.setState({error: true, loading:false})
         })
+        
     }
     addCity =(e)=>{
         const dataCity = this.state.data.data[e.target.id]

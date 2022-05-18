@@ -57,14 +57,9 @@ const Daily = (props)=>{
     return(
         <div className="daily">
             <Container>
-                <div className="daily-container">
-                    <div className="daily-title">
-                        <h2>پیش بینی 7 روز آینده</h2>
-                    </div>
                 {data.api.status === 200 ? 
                     showData()
                     : null }
-                </div>
             </Container>
 
         </div>

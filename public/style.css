@@ -1,4 +1,7 @@
 @font-face {
-    font-family: vazir;
-    src: url("./fonts/Vazir-Light.ttf");
+    font-family: irsans;
+    src: url("./fonts/irsans.woff") ;
+}
+body{
+    font-family: irsans;
 }

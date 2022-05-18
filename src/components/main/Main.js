@@ -11,7 +11,6 @@ class Main extends React.Component{
         loc:""
     }
     componentDidMount(){
-        console.log(this.props)
         const local = localStorage.getItem("weatherInfo")
         const location = JSON.parse(local)
         this.setState({
@@ -25,25 +24,17 @@ class Main extends React.Component{
                 })
             })
     }
-
     render(){
        
         return(
                 this.state.api.status === 200 ?
-                    <div>
-                            <Header api={this.state.api} loc={this.state.loc}/>
-                            <Hourly api={this.state.api}/>
-                            <Daily api={this.state.api}/>
+                    <div className="main">
+                        <Header api={this.state.api} loc={this.state.loc}/>
+                        <Hourly api={this.state.api}/>
+                        <Daily api={this.state.api}/>
                     </div>
                     : 
-                    <div style={{
-                        position: "absolute",
-                        display: "flex",
-                        justifyContent:"center",
-                        alignItems: "center",
-                        width:"100%",
-                        height: "100%",
-                    }}>
+                    <div className="loading">
                         <p>درحال بارگذاری...</p>
                     </div>
         )

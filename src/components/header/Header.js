@@ -1,14 +1,21 @@
-import React,{useState,useEffect} from "react"
+import React,{useState,useEffect, useMemo} from "react"
 import "./Header.scss"
+import useTime from "../../hooks/useTime"
 import Container from "../../hoc/Container"
-import Navbar from "../navbar/Navbar"
+import ChangeCity from "../changecity/Changecity"
 import ImageStatus from "../imageStatus/imageStatus"
 import Background from "./bachground/background"
-const Header =(props)=>{
+const Header = (props)=>{
     const [header,setHeader] = useState({
         api:{},
         loc:{}
     })
+
+    const date = useTime(
+        header.api.status === 200 ? header.api.data.current.dt : "",
+        "dayOfWeek","numberOfDay","month", "hour","minutes"
+        )
+
     useEffect(()=>{
         setHeader({
             api: props.api,
@@ -16,27 +23,23 @@ const Header =(props)=>{
         })
     },[])
 
-    const timeHandler =(dt)=>{
-        const time = new Date(dt * 1000)
-        const month =['ژانویه','فوریه','مارس','آوریل','مه','ژوئن','جولای','اوت','سپتامبر','اکتبر','نوامبر','دسامبر']
-        const day = time.getDate()
-        const days = ['یک شنبه','دو شنبه','سه شنبه','چهار شنبه','پنج شنبه','جمعه','شنبه']
-        const indexdays = time.getDay()
-        const indexMonth= time.getMonth()
-        return `${days[indexdays]}، ${day} ${month[indexMonth]}`
-    }
     const roundNumber =(num)=>{
         return Math.round(num)
     }
     if(header.api.status === 200){
+        
         return(
             <Background weather={header.api.data.current.weather[0]}>
                 <Container>
-                    <div className="header__container">
-                        <Navbar/>
+                    <div className="header__container" >
                         <div className="header__info">
-                            <p className="header__info-location">{header.loc.local_names.fa}</p>
-                            <p className="header__info-date">{timeHandler(header.api.data.current.dt)}</p>
+                            <div className="header__info-location">
+                                <span className="header__info-loc-name">
+                                    {header.loc.local_names.fa}
+                                </span>
+                                <ChangeCity/>
+                            </div>
+                            <p className="header__info-date">{date[0]}، {date[1]} {date[2]} {date[3]}:{date[4]} </p>
                             <div className="header__info-section">
                                 <p className="header__info-temp">{roundNumber(header.api.data.current.temp)}°C</p>
                                 <ImageStatus weather={header.api.data.current.weather[0]} class="header__info-image"/>
