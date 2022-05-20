@@ -24,7 +24,8 @@
             border-bottom: 1px solid var(--blue1);
         }
         &-time{
-            width: 10rem;
+            width: 8rem;
+            white-space: nowrap;
         }
         &-rain{
             width: 6rem;
@@ -68,9 +69,6 @@
             padding: .5rem;
             &:not(:last-child){
                 margin-bottom: 1rem;
-            }
-            &-time,&-rain,&-min-mix{
-                font-size: 1.2rem;
             }
             &-rain{
                 & span{
