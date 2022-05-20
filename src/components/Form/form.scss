@@ -3,7 +3,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom right,#14bcf8,#1068f3,#14bcf8,#1068f3);
+    background: var(--blue1);
     background-size: 400% 400%;
     //animation: loading 15s ease-in infinite;
     &-container{
@@ -13,7 +13,7 @@
         z-index: 20;
     }
     &-title{
-        color: #fff;
+        color: var(--blue5);
         margin-bottom: 2rem;
         white-space: nowrap;
     }
@@ -26,7 +26,7 @@
         padding: 2rem;
         margin-top: 10rem;
         border-radius: .5rem;
-        background-color: rgba(0, 0, 0, 0.15);
+        background-color: #fff;
     }
     &-inputs{
         position: relative;
@@ -37,15 +37,15 @@
         width: 100%;
         &-string{
             width: 100%;
-            background-color: rgba(255, 255, 255, .8);
-            border: 1px solid #fff;
+            background-color: #fff;
+            border: 1px solid var(--blue2);
             outline: none;
             color: #000;
             padding: .5rem;
             font-size: 1.5rem;
             border-radius: .5rem;
             &:focus-visible{
-                border: 1px solid #fff;
+                border: 1px solid var(--blue4);
             }
             &::placeholder{
                 text-align: right;
@@ -59,7 +59,7 @@
             left: 0;
             bottom: 0;
             padding: .5rem 1rem;
-            background-color: #14bcf8;
+            background-color: var(--blue4);
             border: 1px solid #fff;
             border-radius: .5rem;
             color: #fff;
@@ -79,7 +79,7 @@
             padding: 2rem;
             margin-top: 2rem;
             border-radius: .5rem ;
-            background-color: rgba(0, 0, 0, 0.15);
+            background-color: #fff;
         }
         &-item {
             display: flex;
@@ -87,9 +87,10 @@
             align-items: center;
             width: 100%;
             text-align: left;
-            background-color: rgba(255, 255, 255, .8);
+            background-color: var(--blue4);
             border-radius: .5rem;
             padding: 1rem;
+            color: #fff;
             cursor: pointer;
             &:not(:last-child){
                 margin-bottom: 1rem;
@@ -100,7 +101,6 @@
             width: 2rem;
             height: 100%;
             margin-right: 1rem;
-            background: url(../assets/images/location.svg);
         }
     }
     &-loading{
@@ -108,16 +108,16 @@
         height: 3.4rem;
         margin-bottom: 1rem;
         border-radius: .5rem;
-        background: linear-gradient(90deg, rgba(255,255,255,.8) 0%, rgba(255,255,255,.8) 45%, rgba(225,225,223,.7) 50%, rgba(255,255,255,.8) 55%, rgba(255,255,255,.8) 100%);
+        background: linear-gradient(90deg, var(--dark-gray) 0%, var(--dark-gray) 45%, var(--light-gray) 50%, var(--dark-gray) 55%, var(--dark-gray) 100%);
         background-size: 200% 200%;
-        animation: loading 2s ease infinite;
+        animation: loading 2s ease-in infinite;
     }
 
 }
 
 @keyframes loading {
     0%{
-        background-position: 0% 100%;
+        background-position: -50% 100%;
     }
     100%{
         background-position: 150% 100%;

@@ -7,12 +7,12 @@
         color: var(--blue4);
     }
 }
-.social-media{
+.footer-link{
+    &:not(:last-child){
+        margin-left: 1rem;
+    }
 }
 .footer-image{
     height: 3rem;
     margin-bottom: 1rem;
-    &:not(:last-child){
-        margin-left: 1rem;
-    }
 }

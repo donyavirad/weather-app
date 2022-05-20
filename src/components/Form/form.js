@@ -2,8 +2,7 @@ import React from 'react'
 import { Link, Navigate} from 'react-router-dom'
 import axios from 'axios'
 import "./form.scss"
-import Container from '../hoc/Container'
-//import location from "../assets/images/location.svg"
+import Container from '../../hoc/Container'
 class Form extends React.Component {
     state={
         userInput :"",
@@ -12,8 +11,6 @@ class Form extends React.Component {
         loading: false,
         setDataIsOk : false,
     }
-
-
     setInput=(e)=>{
         this.setState({userInput: e.target.value})
     }
@@ -35,7 +32,7 @@ class Form extends React.Component {
     addCity =(e)=>{
         const dataCity = this.state.data.data[e.target.id]
         const string = JSON.stringify(dataCity)
-        localStorage.setItem("weatherInfo",string)
+        localStorage.setItem("weatherData",string)
         this.setState({setDataIsOk:true})
     }
     render(){

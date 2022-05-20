@@ -9,9 +9,15 @@ const Footer = ()=>{
         <Container>
             <div className="footer">
                 <div className="footer-social-media">
-                    <img className="footer-image" src={github} alt="github"/>
-                    <img className="footer-image" src={telegram}/>
-                    <img className="footer-image" src={instgram}/>
+                    <a href="https://github.com/donyavirad" className="footer-link" target="_blank">
+                        <img className="footer-image" src={github} alt="github"/>
+                    </a>
+                    <a href="https://t.me/donyavi_developer" className="footer-link" target="_blank">
+                        <img className="footer-image" src={telegram}/>
+                    </a>
+                    <a href="https://instagram.com/donyavi_developer?igshid=YmMyMTA2M2Y=" className="footer-link" target="_blank">
+                        <img className="footer-image" src={instgram}/>
+                    </a>
                 </div>
                 <p className="footer-text">©ساخته شده توسط حامد دنیوی راد</p>
             </div>

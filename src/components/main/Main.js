@@ -12,7 +12,7 @@ class Main extends React.Component{
         loc:""
     }
     componentDidMount(){
-        const local = localStorage.getItem("weatherInfo")
+        const local = localStorage.getItem("weatherData")
         const location = JSON.parse(local)
         this.setState({
             loc:location
