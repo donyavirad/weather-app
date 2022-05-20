@@ -4,6 +4,7 @@ import "./Main.scss"
 import Header from "../header/Header"
 import Hourly from "../hourly/Hourly"
 import Daily from "../daily/Daily"
+import Footer from "../footer/Footer"
 
 class Main extends React.Component{
     state={
@@ -32,6 +33,7 @@ class Main extends React.Component{
                         <Header api={this.state.api} loc={this.state.loc}/>
                         <Hourly api={this.state.api}/>
                         <Daily api={this.state.api}/>
+                        <Footer/>
                     </div>
                     : 
                     <div className="loading">

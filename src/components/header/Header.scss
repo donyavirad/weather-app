@@ -5,7 +5,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba($color: #000000, $alpha: .4);
+        background-color: rgba(#ffffff, .4);
     }
     &__container{
         position: relative;
@@ -18,9 +18,8 @@
         align-items: center;
         justify-content: center;
         height: 45rem;
-        &-location,&-temp,&-desc{
-            text-shadow: 1px 0 0 #a5a5a5, 1px 0 0 #a5a5a5;
-            color: #fff;
+        &-location,&-temp,&-desc,&-date{
+            color: var(--blue5);
         }
         &-location{
             font-size: 3rem;
@@ -32,7 +31,6 @@
         }
         &-date{
             font-size: 2rem;
-            color: #eaeaea;
             opacity: 0;
             animation: text-anime 1s .5s 1 forwards;
         }
