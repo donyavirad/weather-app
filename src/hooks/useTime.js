@@ -15,7 +15,6 @@ const useTime = (dt,...whatTime)=>{
     const res = []
 
     for(let item in whatTime){
-        //console.log(whatTime[item])
         switch(whatTime[item]){
             case "year":
                 res.push(year)
@@ -23,13 +22,13 @@ const useTime = (dt,...whatTime)=>{
             case "month": 
                 res.push(month[indexMonth])
                 break
-            case "numberOfDay":
+            case "date":
                 res.push(numberDay)
                 break
-            case "dayOfWeek":
+            case "day":
                 res.push(daysOfWeek[indexDaysWeek])
                 break
-            case "hour":
+            case "hours":
                 if(hour < 10){
                     hour =`0${hour}`
                 }

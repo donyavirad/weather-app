@@ -13,7 +13,7 @@ const Header = (props)=>{
 
     const date = useTime(
         header.api.status === 200 ? header.api.data.current.dt : "",
-        "dayOfWeek","numberOfDay","month", "hour","minutes"
+        "day","date","month", "hours","minutes"
         )
 
     useEffect(()=>{

@@ -2,7 +2,7 @@ import React from "react"
 import ImageStatus from "../../imageStatus/imageStatus"
 import useTime from "../../../hooks/useTime"
 const HourlyItem = (props)=>{
-    const time = useTime(props.dt,"hour","minutes")
+    const time = useTime(props.dt,"hours","minutes")
     
     const roundNumber =(num)=>{
         return Math.round(num)
