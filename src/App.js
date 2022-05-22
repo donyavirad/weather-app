@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router,Routes,Route,Navigate, BrowserRouter} from 'react-router-dom'
+import { BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Main from './components/main/Main'
 import Form from "./components/Form/form"
 import "./base.scss"
