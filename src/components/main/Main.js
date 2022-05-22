@@ -28,9 +28,11 @@ class Main extends React.Component{
                     loading: false
                 })
             }).catch((error)=>{
+                localStorage.removeItem("weatherData")
                 this.setState({error : true, loading: false})
             })
     }
+
     render(){
         let content = ""
         if(this.state.loading){
@@ -49,9 +51,9 @@ class Main extends React.Component{
             </div>
         }
         if(this.state.error){
-
             content = <div className="loading">
-                <p>لطفا اینترنت خود را بررسی کنید!</p>
+                <span>لطفا اینترنت خود را بررسی کنید!</span>
+                <a href="./">بازگشت</a>
             </div>
         }
 

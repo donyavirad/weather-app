@@ -4,8 +4,18 @@
 .loading{
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    span{
+        margin-bottom: 1rem;
+    }
+    a{
+        padding: .5rem 1rem;
+        background-color: var(--blue4);
+        color: #fff;
+        border-radius: .5rem;
+    }
 }
