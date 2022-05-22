@@ -1,24 +1,15 @@
-import React, {useEffect,useState} from "react"
+import React from "react"
 import Container from "../../hoc/Container"
 import "./Daily.scss"
 import DailyItem from "./dailyitem/dailyItem"
 const Daily = (props)=>{
-    const [data, setData] = useState({
-        api: {},
-        
-    })
-    useEffect(()=>{
-        setData({
-            api: props.api
-        })
-    },[])
 
     const showData = ()=>{
-        const updatedData = data.api.data.daily
-        updatedData.splice(6,1)
+        const Data = props.api
+        Data.splice(7,1)
         return(
             <div className="daily-content">
-                {updatedData.map((item,id)=>{
+                {Data.map((item,id)=>{
                     return(
                         <DailyItem
                             key={id}
@@ -38,11 +29,8 @@ const Daily = (props)=>{
     return(
         <div className="daily">
             <Container>
-                {data.api.status === 200 ? 
-                    showData()
-                    : null }
+                    {showData()}
             </Container>
-
         </div>
     )
 }
