@@ -27,7 +27,7 @@ class Main extends React.Component{
                     api: response,
                     loading: false
                 })
-            }).catch((error)=>{
+            }).catch(()=>{
                 localStorage.removeItem("weatherData")
                 this.setState({error : true, loading: false})
             })

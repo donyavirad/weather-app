@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Navigate} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import axios from 'axios'
 import "./form.scss"
 import Container from '../../hoc/Container'
@@ -16,15 +16,14 @@ class Form extends React.Component {
     }
     serachCity =(e)=>{
         e.preventDefault()
-        //console.log(this.state)
-        this.setState({error : false , loading : true})
+        this.setState({error : false , loading : true, data: {} })
         axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${this.state.userInput}&limit=10&appid=3c1faa2ad2a590d8f291f067c5ba2c00`)
         .then((response)=>{
             this.setState({
                 data: response
             })
             this.setState({loading: false})
-        }).catch((error)=>{
+        }).catch(()=>{
             this.setState({error: true, loading:false})
         })
         
@@ -53,7 +52,7 @@ class Form extends React.Component {
             if(data.length === 0){
                result = 
                <div className='form-result-show'>
-                    <p style={{color: "white"}}>شهری یافت نشد.</p>
+                    <p>شهری یافت نشد.</p>
                 </div>
             }else{
                 result = 
