@@ -19,7 +19,7 @@ const Footer = ()=>{
                         <img className="footer-image" src={instgram}/>
                     </a>
                 </div>
-                <p className="footer-text">©ساخته شده توسط حامد دنیوی راد</p>
+                <p className="footer-text">ساخته شده توسط حامد دنیوی راد</p>
             </div>
         </Container>
     )
